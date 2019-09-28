@@ -1,0 +1,27 @@
+
+
+server:
+  port: 8090
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+spring:
+  application:
+    name: VIEW-SERVICE
+  profiles:
+    active: env
+
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://10.111.229.84:8761/eureka
+      defaultZone: http://192.168.0.101:8761//eureka
+
+ribbon:
+  ReadTimeout: 6000000
+  ConnectTimeout: 6000000
+feign:
+  client:
+    config:
+      defualt:
+        connectTimeout: 20000
+        readTimeout: 20000
